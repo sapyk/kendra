@@ -64,7 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.href = `mailto:${siteConfig.contact.email}`;
             } else {
                 const value = getNestedValue(siteConfig, key);
-                if (value) el.href = value;
+                if (value) {
+                    el.href = value;
+                    el.style.display = ''; // Ensure visible if it was hidden
+                } else {
+                    el.style.display = 'none'; // Hide if no link provided
+                }
             }
         });
 
@@ -73,19 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (programsContainer && siteConfig.programs) {
             programsContainer.innerHTML = ''; 
             siteConfig.programs.forEach(program => {
-                const imgUrl = siteConfig.images[program.imageKey] || siteConfig.images.program;
+                const imgUrl = program.image || siteConfig.images.program;
+                const detailsLink = program.detailsLink || "#";
                 const card = document.createElement('div');
-                card.className = 'bg-white rounded-lg shadow-sm overflow-hidden transition-transform transform hover:-translate-y-1 border border-gray-100';
+                card.className = 'bg-white rounded-lg shadow-sm overflow-hidden transition-transform transform hover:-translate-y-1 border border-gray-100 flex flex-col';
                 card.innerHTML = `
-                    <img src="${imgUrl}" alt="${program.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                    <img src="${imgUrl}" alt="${program.title}" class="w-full h-48 object-cover object-center">
+                    <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold text-gray-900">${program.title}</h3>
-                            <span class="text-sm font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded">${program.price}</span>
+                            <span class="text-sm font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded whitespace-nowrap ml-2">${program.price}</span>
                         </div>
-                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">${program.description}</p>
-                        <div class="mt-4">
-                            <a href="register.html" class="text-orange-600 hover:text-orange-700 font-semibold text-sm">Enroll Now &rarr;</a>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">${program.description}</p>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-50">
+                            <a href="${detailsLink}" class="text-gray-500 hover:text-orange-600 font-medium text-sm transition-colors">More Details</a>
+                            <a href="register.html" class="bg-orange-50 text-orange-600 hover:bg-orange-600 hover:text-white px-4 py-2 rounded text-sm font-semibold transition-colors">Enroll Now &rarr;</a>
                         </div>
                     </div>
                 `;
