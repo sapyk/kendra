@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const key = el.getAttribute('data-config-link');
             if (key === 'whatsapp') {
                 el.href = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(siteConfig.contact.whatsappMessage)}`;
+                el.target = '_blank';
+                el.rel = 'noopener noreferrer';
             } else if (key === 'phone') {
                 el.href = `tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`;
             } else if (key === 'email') {
@@ -67,6 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (value) {
                     el.href = value;
                     el.style.display = ''; // Ensure visible if it was hidden
+                    if (value.startsWith('http')) {
+                        el.target = '_blank';
+                        el.rel = 'noopener noreferrer';
+                    }
                 } else {
                     el.style.display = 'none'; // Hide if no link provided
                 }
