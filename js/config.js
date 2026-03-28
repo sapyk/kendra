@@ -1,7 +1,13 @@
-// Centralized configuration for the website data
 const siteConfig = {
+    brand: {
+        titleLine1: "Sri Atmananda",
+        titleLine2: "Pranayama Yoga Kendra",
+        subtitle: "Guided Breath Practice for a Calm, Healthy & Balanced Life"
+    },
     contact: {
-        phone: "+91 98765 43210",
+        phone: "+91 9900727600",
+        whatsapp: "919900727600",
+        whatsappMessage: "Namasthe, I would like to know more about the Pranayama program.",
         email: "info@sapyk.org",
         address: "Sri Atmananda Pranayama Yoga Kendra, Bangalore, Karnataka, India"
     },
@@ -10,24 +16,66 @@ const siteConfig = {
         twitter: "https://twitter.com/sapyk",
         instagram: "https://instagram.com/sapyk"
     },
+    images: {
+        logo: "assets/images/logo-mark.png",
+        favicon: "assets/images/favicon.png",
+        hero1: "assets/images/hero-sanctuary.png",
+        hero2: "assets/images/hero-sanctuary-2.png",
+        story: "assets/images/story-space.png",
+        guru: "assets/images/guru-portrait.png",
+        program: "assets/images/program-breath.png",
+        contact: "assets/images/contact-welcome.png",
+        upi: "assets/images/upi-code.jpeg",
+        galleryFeatured: "assets/images/gallery-featured.jpg",
+        gallery: [
+            "assets/images/gallery-01.png",
+            "assets/images/gallery-02.png",
+            "assets/images/gallery-03.png",
+            "assets/images/gallery-04.png",
+            "assets/images/gallery-05.png",
+            "assets/images/gallery-06.png"
+        ],
+        registerPreview: "assets/images/register-preview.png"
+    },
     programs: [
         {
-            title: "Beginner Yoga",
-            description: "A gentle introduction to basic yoga postures and breathing techniques.",
-            duration: "4 Weeks",
-            image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "Prana Foundation",
+            price: "₹1,000",
+            description: "Step-by-step foundational breathing practice.",
+            imageKey: "program"
         },
         {
-            title: "Advanced Pranayama",
-            description: "Deep dive into advanced breathing exercises for mental clarity and energy.",
-            duration: "6 Weeks",
-            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "Nitya Prana",
+            price: "₹2,000",
+            description: "Daily routine development with personal guidance.",
+            imageKey: "program"
         },
         {
-            title: "Meditation Retreat",
-            description: "Weekend retreats focused on mindfulness and inner peace.",
-            duration: "2 Days",
-            image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "Prana Chikitsa",
+            price: "₹2,000",
+            description: "Health-focused pranayama for: Stress, BP, Diabetes, Digestion, Sleep, Immunity, Women Health.",
+            imageKey: "program"
+        },
+        {
+            title: "Prana Shakti",
+            price: "₹2,000",
+            description: "Complete pranayama package (Life Balance Program).",
+            imageKey: "program"
+        },
+        {
+            title: "Sthree Prana",
+            price: "₹2,000",
+            description: "Special program for women’s health and balance.",
+            imageKey: "program"
+        },
+        {
+            title: "Prana Sadhana",
+            price: "₹2,000",
+            description: "Advanced and continuous practice for long-term discipline.",
+            imageKey: "program"
         }
-    ]
+    ],
+    forms: {
+        registerLink: "https://forms.gle/MiNi1rHiccfaPqcv9"
+    }
 };
