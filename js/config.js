@@ -83,6 +83,7 @@ const siteConfig = {
         }
     ],
     forms: {
-        registerLink: "https://forms.gle/MiNi1rHiccfaPqcv9"
+        registerLink: "https://forms.gle/MiNi1rHiccfaPqcv9",
+        contactLink: "https://forms.gle/yQ6M7RSdDmLtJFxZ7"
     }
 };
